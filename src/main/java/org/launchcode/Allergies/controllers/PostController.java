@@ -13,6 +13,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 /**
  * Created by LaunchCode
@@ -31,7 +32,7 @@ public class PostController {
     @RequestMapping(value = "")
     public String index(Model model) {
 
-        model.addAttribute("post", postDao.findAll());
+        model.addAttribute("posts", postDao.findAll());
         model.addAttribute("title", "My Posts");
 
         return "post/index";
@@ -108,4 +109,5 @@ public class PostController {
         return "redirect:";
     }
 
-}
+
+    }

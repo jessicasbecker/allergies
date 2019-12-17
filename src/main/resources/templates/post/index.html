@@ -11,13 +11,13 @@
 <p th:unless="${posts} and ${posts.size()}">No Reviews Yet. Add One Now! :(</p>
 
 
-<table class="table">
+<!--<table class="table">-->
 
-    <tr>
+<!--    <tr>-->
         <!--        <th>Title</th>-->
         <!--        <th>Post</th>-->
-        <th>User</th>
-    </tr>
+<!--        <th>User</th>-->
+<!--    </tr>-->
 
     <!--    <tr th:each="post : ${posts}">-->
     <!--        <td th:text="${post.name}"></td>-->
@@ -25,22 +25,23 @@
     <!--        <td th:text="${post.user.name}"></td>-->
     <!--    </tr>-->
 
-    <tr th:each="post : ${post}">
-        <td th:text="${post.name}"></td>
+<!--    <tr th:each="post : ${post}">-->
+<!--        <td th:text="${post.name}"></td>-->
         <!--        <td th:text="${post.description}"></td>-->
         <!--        <td th:text="${post.user.name}"></td>-->
-    </tr>
-</table>
+<!--    </tr>-->
+<!--</table>-->
 <table>
     <tr>
+        <th>Restaurant Name</th>
         <th>Review</th>
         <th>User</th>
         <th>Allergy</th>
     </tr>
-    <tr th:each="post : ${post}">
-        <!--        <td th:text="${post.name}"></td>-->
+    <tr th:each="post : ${posts}">
+        <td th:text="${post.name}"></td>
         <td th:text="${post.description}"></td>
-        <td th:text="${post.user.name}"></td>
+        <td><a th:href="@{'/post/user/' + ${post.user.id}}" th:text="${post.user.name}"></a></td>
         <td th:text="${post.user.allergyName}"></td>
     </tr>
 </table>
