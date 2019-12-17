@@ -13,12 +13,12 @@
         <span th:errors="*{name}" class="error"></span>
     </div>
     <div class="form-group">
-        <label th:for="description">Experience Description</label>
+        <label th:for="description">Tell Us About Your Experience</label>
         <input class="form-control" th:field="*{description}" />
         <span th:errors="*{description}" class="error"></span>
     </div>
 
-    <div class="form-group">
+    <div class="form-group col-md-2">
         <label th:for="rating">Rate your Experience</label>
         <input class="form-control" type="number" th:field="*{rating}" />
         <span th:errors="*{rating}" class="error"></span>
