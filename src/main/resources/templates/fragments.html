@@ -3,6 +3,10 @@
 <head th:fragment="head">
     <meta charset="UTF-8"/>
     <title th:text="${title}">Allergies</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" th:href="@{css/style.css}"/>
+
 <!--    <link rel="stylesheet" th:href="@{/css/styles.css}"/>-->
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
@@ -12,21 +16,54 @@
 </head>
 <body>
 
-
 <nav th:fragment="navigation" class="navbar navbar-expand-lg navbar-light bg-light">
-    <ul class="navbar-nav">
-    <li class="nav-item"><a href="/post">Home</a> </li>
-    <li class="nav-item"> <a href="/user">User</a> </li>
-    <li class="nav-item"><a href="/user/register">Register</a></li>
-    <li class="nav-item"><a href="/user/login">Login</a></li>
-
-    </ul>
+    <a class="navbar-brand" id="logo" href="/post">Allergy Tracker</a>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="../post">Home <span class="sr-only">(current)</span></a>
+            </li>
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" href="../user">User</a>-->
+<!--            </li>-->
+              <li class="nav-item">
+                <a class="nav-link" href="../user/login">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../user/register">Register</a>
+            </li>
+        </ul>
+<!--        <a href="javascript: document.logoutForm.submit()" role="menuitem"> Logout</a>-->
+<!--        <form class="form-inline my-2 my-lg-0" name="logoutForm" th:action="@{/post}" method="post" th:hidden="true">-->
+<!--            <input hidden type="submit" value="Sign Out"/>-->
+<!--        </form>-->
+        <!--                    <a class="nav-link" th:if="${#request.userPrincipal != null}" th:action="@{/logout}" method="post">Sign Out</a>-->
+    </div>
 </nav>
+
+
+
+
+
+
+
+
+
+
+<!--<nav th:fragment="navigation" class="navbar navbar-expand-lg navbar-light bg-light">-->
+<!--    <ul class="navbar-nav">-->
+<!--    <li class="nav-item"><a href="/post">Home</a> </li>-->
+<!--    <li class="nav-item"> <a href="/user">User</a> </li>-->
+<!--    <li class="nav-item"><a href="/user/register">Register</a></li>-->
+<!--    <li class="nav-item"><a href="/user/login">Login</a></li>-->
+
+<!--    </ul>-->
+<!--</nav>-->
 
 <nav th:fragment="postnavigation">
     <!--    <a href="/post/register">Register</a> |-->
-    <a href="/post/add">Add</a> |
-    <a href="/post/remove">Remove</a>
+    <a href="/post/add">Add New Review</a>
+<!--    <a href="/post/remove">Remove</a>-->
 </nav>
 
 </body>

@@ -4,9 +4,12 @@
 
 <body class="container">
 
-<h1>User Reviews</h1>
+
 
 <nav th:replace="fragments :: navigation"></nav>
+<br><br>
+
+<h3>User Reviews</h3>
 
 <p th:unless="${posts} and ${posts.size()}">No Reviews Yet. Add One Now! :(</p>
 
@@ -31,7 +34,9 @@
         <!--        <td th:text="${post.user.name}"></td>-->
 <!--    </tr>-->
 <!--</table>-->
-<table>
+
+<nav th:replace="fragments :: postnavigation"></nav>
+<table class="table">
     <tr>
         <th>Restaurant Name</th>
         <th>Review</th>
@@ -46,7 +51,7 @@
     </tr>
 </table>
 
-<nav th:replace="fragments :: postnavigation"></nav>
+
 
 </body>
 </html>

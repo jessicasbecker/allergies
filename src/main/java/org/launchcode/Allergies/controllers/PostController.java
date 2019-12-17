@@ -106,7 +106,7 @@ public class PostController {
 
         postDao.save(post);
 
-        return "redirect:";
+        return "redirect:/index";
     }
 
 

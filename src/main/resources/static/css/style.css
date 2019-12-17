@@ -1,0 +1,14 @@
+#logo {
+font-family: 'Lobster', san-serif;
+font-size: 28px;
+}
+
+#jumbotron {
+    background-image: url(AllergyTracker.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#home-title {
+font-family: 'Lobster', san-serif;
+}

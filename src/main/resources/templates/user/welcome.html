@@ -7,15 +7,28 @@
 
 </head>
 <body>
-<header>
+
     <nav th:replace="fragments :: navigation"></nav>
     <a href="/post/add">Add Review</a> |
     <!--    container is  class bc will be, other wise would have been id -->
-    <div class="container">
-        <div id="branding">
-            <h1>Allergies - helping you take back control of your life, one review at a time</h1>
-            <h3 th:text="${name}">Food Allergies are no joke!</h3>
+
+    <section class="jumbotron jumbotron-fluid" id="jumbotron">
+        <div class="container">
+            <h1 class="display-4 title" id="home-title">Allergies</h1>
+            <p class="lead">Allergies - helping you take back control of your life, one review at a time
+                </p>
+            <p>Food Allergies are no joke!</p>
+
         </div>
+    </section>
+
+
+<!--        </section>-->
+<!--    <div class="container">-->
+<!--        <div id="branding">-->
+<!--            <h1>Allergies - helping you take back control of your life, one review at a time</h1>-->
+<!--            <h3 th:text="${name}">Food Allergies are no joke!</h3>-->
+<!--        </div>-->
 
 
         <!--            <ul>-->
@@ -25,10 +38,10 @@
         <!--            </ul>-->
 
     </div>
-</header>
-<div>
-    <p th:text="Hello + ' ' +${name}"></p>
-</div>
+
+<!--<div>-->
+<!--    <p th:text="Hello + ' ' +${name}"></p>-->
+<!--</div>-->
 
 <section id="showcase">
     <div class="container">

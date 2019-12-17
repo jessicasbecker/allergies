@@ -4,9 +4,11 @@
 
 <body class="container">
 
-<h1 th:text="${title}">Default Title</h1>
+
 
 <nav th:replace="fragments :: navigation"></nav>
+
+<h3 th:text="${title}">Default Title</h3>
 <ul>
     <li th:each="user: ${user}" th:text="${user.name}"></li>
 </ul>
