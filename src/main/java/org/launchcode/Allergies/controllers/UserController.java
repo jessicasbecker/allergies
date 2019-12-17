@@ -1,5 +1,6 @@
 package org.launchcode.Allergies.controllers;
 
+
 import org.launchcode.Allergies.models.User;
 import org.launchcode.Allergies.models.data.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ public class UserController {
 
     @RequestMapping(value="")
     public String index(Model model) {
-        model.addAttribute("title", "Been There");
+        model.addAttribute("title", "Allergies");
         model.addAttribute("user", userDao.findAll());
         return "user/index";
     }

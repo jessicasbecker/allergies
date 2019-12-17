@@ -30,6 +30,10 @@ dependencies {
 	}
 }
 
+bootRun {
+	sourceResources sourceSets.main
+}
+
 test {
 	useJUnitPlatform()
 }

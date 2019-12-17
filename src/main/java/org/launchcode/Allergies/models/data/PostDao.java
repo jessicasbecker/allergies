@@ -10,3 +10,4 @@ import javax.transaction.Transactional;
 @Transactional
 public interface PostDao extends CrudRepository<Post, Integer> {
 }
+

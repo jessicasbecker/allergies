@@ -1,6 +1,7 @@
 package org.launchcode.Allergies.controllers;
 
 
+
 import org.launchcode.Allergies.models.Post;
 import org.launchcode.Allergies.models.User;
 import org.launchcode.Allergies.models.data.PostDao;
@@ -13,6 +14,9 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
+/**
+ * Created by LaunchCode
+ */
 @Controller
 @RequestMapping("post")
 public class PostController {
@@ -35,7 +39,7 @@ public class PostController {
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayAddPostForm(Model model) {
-        model.addAttribute("title", "Add Post");
+        model.addAttribute("title", "Add Review");
         model.addAttribute(new Post());
 
         model.addAttribute("users", userDao.findAll());
@@ -48,10 +52,11 @@ public class PostController {
 
         if (errors.hasErrors()) {
             model.addAttribute("title", "Add Post");
-            return "post/add";
+            return "post";
         }
 
-        User user = userDao.findOne(userId);
+        User user = userDao.findById(userId).get();
+
         newPost.setUser(user);
         postDao.save(newPost);
         return "redirect:";
@@ -60,7 +65,7 @@ public class PostController {
     @RequestMapping(value = "remove", method = RequestMethod.GET)
     public String displayRemovePostForm(Model model) {
         model.addAttribute("posts", postDao.findAll());
-        model.addAttribute("title", "Remove Post");
+        model.addAttribute("title", "Remove Review");
         return "post/remove";
     }
 
@@ -68,7 +73,7 @@ public class PostController {
     public String processRemovePostForm(@RequestParam int[] postIds) {
 
         for (int postId : postIds) {
-            postDao.delete(postId);
+            postDao.deleteById(postId);
         }
 
         return "redirect:";
@@ -76,14 +81,14 @@ public class PostController {
 
     @RequestMapping(value = "user/{userId}", method = RequestMethod.GET)
     public String user(Model model, @PathVariable int userId) {
-        model.addAttribute("posts", userDao.findOne(userId).getPosts());
-        model.addAttribute("title", "My Posts");
+        model.addAttribute("posts", userDao.findById(userId).get().getPosts());
+        model.addAttribute("title", "My Reviews");
         return "post/index";
     }
 
     @RequestMapping(value = "edit/{postId}", method = RequestMethod.GET)
     public String displayEditForm(Model model, @PathVariable int postId) {
-        model.addAttribute("post", postDao.findOne(postId));
+        model.addAttribute("post", postDao.findById(postId));
         model.addAttribute("users", userDao.findAll());
 
         return "post/edit";
@@ -91,8 +96,8 @@ public class PostController {
 
     @RequestMapping(value = "edit", method = RequestMethod.POST)
     public String processEditForm(@RequestParam int postId, @RequestParam String postName, @RequestParam String postDescription, @RequestParam int userId) {
-        Post post = postDao.findOne(postId);
-        User user = userDao.findOne(userId);
+        Post post = postDao.findById(postId).get();
+        User user = userDao.findById(userId).get();
 
         post.setName(postName);
         post.setDescription(postDescription);

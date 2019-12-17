@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<p th:unless="${posts} and ${posts.size()}">No Reviews Yet. Add One Now! :(</p>
+
+
+<table class="table">
+
+    <tr>
+        <!--        <th>Title</th>-->
+        <!--        <th>Post</th>-->
+        <th>User</th>
+    </tr>
+
+    <!--    <tr th:each="post : ${posts}">-->
+    <!--        <td th:text="${post.name}"></td>-->
+    <!--        <td th:text="${post.description}"></td>-->
+    <!--        <td th:text="${post.user.name}"></td>-->
+    <!--    </tr>-->
+
+    <tr th:each="post : ${post}">
+        <td th:text="${post.name}"></td>
+        <!--        <td th:text="${post.description}"></td>-->
+        <!--        <td th:text="${post.user.name}"></td>-->
+    </tr>
+</table>
+<table>
+    <tr>
+        <th>Review</th>
+        <th>User</th>
+        <th>Allergy</th>
+    </tr>
+    <tr th:each="post : ${post}">
+        <!--        <td th:text="${post.name}"></td>-->
+        <td th:text="${post.description}"></td>
+        <td th:text="${post.user.name}"></td>
+        <td th:text="${post.user.allergyName}"></td>
+    </tr>
+</table>
+
+<nav th:replace="fragments :: postnavigation"></nav>
+
+</body>
+</html>

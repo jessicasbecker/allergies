@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<form method="post" style="max-width:600px;" th:object="${post}">
+    <div class="form-group">
+        <label th:for="name">Restaurant Name</label>
+        <input class="form-control" th:field="*{name}" />
+        <span th:errors="*{name}" class="error"></span>
+    </div>
+    <div class="form-group">
+        <label th:for="description">Experience Description</label>
+        <input class="form-control" th:field="*{description}" />
+        <span th:errors="*{description}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="rating">Rate your Experience</label>
+        <input class="form-control" type="number" th:field="*{rating}" />
+        <span th:errors="*{rating}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="userId">User</label>
+        <select name="userId">
+            <option th:each="user: ${users}"
+                    th:text="${user.name}"
+                    th:value="${user.id}"></option>
+        </select>
+    </div>
+
+    <input type="submit" value="Add Review" />
+</form>
+
+</body>
+</html>

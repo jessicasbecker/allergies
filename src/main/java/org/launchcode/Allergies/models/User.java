@@ -1,6 +1,5 @@
 package org.launchcode.Allergies.models;
 
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -32,16 +31,21 @@ public class User {
     @Size(min=3, max=15, message="passwords must match")
     private String verifyPassword;
 
+    @NotNull
+    @Size(min=3, max=100, message="please enter your food allergies")
+    private String allergyName;
+
     @OneToMany
     @JoinColumn(name = "user_id")
     private List<Post> posts = new ArrayList<>();
 
     public User() { }
 
-    public User(String name, String email, String password) {
+    public User(String name, String email, String password, String allergyName) {
         this.name = name;
         this.email = email;
         this.password = password;
+        this.allergyName = allergyName;
     }
 
 //    public User(int id, String name, String password) {
@@ -102,5 +106,13 @@ public class User {
                 && !password.equals(verifyPassword)) {
             verifyPassword = null;
         }
+    }
+
+    public String getAllergyName() {
+        return allergyName;
+    }
+
+    public void setAllergyName(String allergyName) {
+        this.allergyName = allergyName;
     }
 }

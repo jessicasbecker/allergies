@@ -1,5 +1,6 @@
 package org.launchcode.Allergies.models.data;
 
+
 import org.launchcode.Allergies.models.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

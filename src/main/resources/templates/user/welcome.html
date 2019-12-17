@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+    <script type="text/javascript" th:src="@{/js/script.js}"></script>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>   <!--This will adjust view based on the device; desktop; mobile,etc-->
+
+    <!--    For SEO    -->
+    <!--    <meta name="description" content="Affordable and professional"/>-->
+    <!--    <meta name="keywords" content="mentoring, affordable development, professional weeb design"/>-->
+    <!--    <meta name="author" content="Nadia the Silent"/>-->
+    <title>Allergies | Review Restaurants </title>
+
+
+</head>
+<body>
+<header>
+    <nav th:replace="fragments :: navigation"></nav>
+    <a href="/post/add">Add Post</a> |
+    <!--    container is  class bc will be, other wise would have been id -->
+    <div class="container">
+        <div id="branding">
+            <h1>Allergies - helping you take back control of your life, one review at a time</h1>
+            <h3 th:text="${name}">Food Allergies are no joke!</h3>
+        </div>
+
+
+        <!--            <ul>-->
+        <!--                <li><a href="index.html"> Home </a> </li>-->
+        <!--                <li><a href="Hello.html"> Hello </a> </li>-->
+        <!--                <li><a href="Hello.html"> Hello </a></li>-->
+        <!--            </ul>-->
+
+    </div>
+</header>
+<div>
+    <p th:text="Hello + ' ' +${name}">Hello!</p>
+</div>
+
+<section id="showcase">
+    <div class="container">
+        <h1>Allergies</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+    </div>
+</section>
+<section id="newsletter">
+    <h1>Subscribe to our Newsletter</h1>
+    <!--    <form action ="subscribe">-->
+
+    <!--    </form>-->
+
+    <form>
+        <input type ="email" placeholder="Enter Email..."/>
+        <button type="submit" class="button_1">Subscribe</button>
+    </form>
+</section>
+<div>Choose your area of improvement:</div>
+
+
+<section id="boxes">
+    <div class ="container">
+        <div class="box">
+            <img th:src="@{/image/java.png}"/>
+            <h3>HTML5 Markup</h3>
+            <p>HTML5 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <!--      linking to an image in html5      <a href="viewpost">-->
+            <img th:src="@{/image/HTML5.png}"/>
+            <!--  need to wrap image in anchor tags           </a>-->
+            <h3>Java</h3>
+            <p>Java Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+            <img th:src="@{/image/python.png}"/>
+
+
+            <h3>Python</h3>
+            <p> Python Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
