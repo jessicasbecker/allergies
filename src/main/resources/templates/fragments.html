@@ -2,16 +2,17 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:fragment="head">
     <meta charset="UTF-8"/>
+
     <title th:text="${title}">Allergies</title>
-
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" th:href="@{css/style.css}"/>
-
-<!--    <link rel="stylesheet" th:href="@{/css/styles.css}"/>-->
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" th:href="@{css/style.css}"/>
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css" />
+
 <!--    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+
 
 </head>
 <body>
@@ -31,6 +32,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../user/register">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../user/login">Logout</a>
             </li>
         </ul>
 <!--        <a href="javascript: document.logoutForm.submit()" role="menuitem"> Logout</a>-->

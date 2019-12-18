@@ -1,16 +1,21 @@
 #logo {
-font-family: 'Lobster', san-serif;
+font-family: 'Lobster', cursive;
 font-size: 28px;
 }
 
 #jumbotron {
-    background-image: url(AllergyTracker.png);
+    background-image: url("/css/AllergyTracker.png");
     background-size: 100%;
     background-repeat: no-repeat;
+    font-family: 'Lobster', cursive;
+}
+
+#jumbotron .lead {
+font-family: 'Lobster', cursive;
 }
 
 #home-title {
-font-family: 'Lobster', san-serif;
+font-family: 'Lobster', cursive;
 }
 
 #myInput {
@@ -27,8 +32,8 @@ font-family: 'Lobster', san-serif;
 #myTable {
   border-collapse: collapse; /* Collapse borders */
   width: 100%; /* Full-width */
-  border: 1px solid #ddd; /* Add a grey border */
-  font-size: 18px; /* Increase font-size */
+  border: 2px solid #ddd; /* Add a grey border */
+  font-size: 16px; /* Increase font-size */
 }
 
 #myTable th, #myTable td {
